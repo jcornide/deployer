@@ -22,7 +22,7 @@ use Symfony\Component\Process\Process;
 /**
  * Deploys an actual project.
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
- * TODO: if failed to restart php-fpm
+ * TODO: What should happen if php-fpm failed to restart
  * TODO: rewrite this as it is doing way too much and is very messy now.
  * TODO: if the connection to the server failed or succeeded we should update the server status
  * TODO: id_rsa and wrapper.sh should be unique names!
@@ -420,6 +420,7 @@ CMD;
                 sprintf('[ -h %s/latest ] && rm %s/latest', $root_dir, $root_dir),
                 sprintf('ln -s %s %s/latest', $latest_release_dir, $root_dir),
                 sprintf('[ ! -z "$(ps -ef | grep -v grep | grep php-fpm)" ] && sudo /usr/sbin/service php5-fpm restart'),
+                # FIXME: Need some work, there are many different ways http://serverfault.com/questions/189940/how-do-you-restart-php-fpm
             ];
         } elseif ($step->stage === Stage::DO_PURGE) {
             // Purge old releases
