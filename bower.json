@@ -1,6 +1,5 @@
 {
     "name": "Deployer",
-    "version": "0.0.15",
     "authors": [
         "Stephen Ball <stephen@rebelinblue.com>"
     ],
@@ -8,12 +7,11 @@
     "ignore": [
         "**/.*",
         "node_modules",
-        "bower_components",
+        "vendor",
         "tests"
     ],
     "dependencies": {
         "ace-min-noconflict": "~1.1.9",
-        "backbone": "~1.1.2",
         "fontawesome": "~4.4.0",
         "ionicons": "~2.0.1",
         "jquery-sortable": "~0.9.12",
@@ -23,6 +21,8 @@
         "respond": "~1.4.2",
         "cropper": "~2.0.0",
         "toastr": "~2.1.2",
-        "admin-lte": "~2.3.2"
+        "admin-lte": "~2.3.2",
+        "vue": "^1.0.17",
+        "vue-resource": "^0.7.0"
     }
 }
